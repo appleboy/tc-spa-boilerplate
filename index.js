@@ -54,7 +54,7 @@
     var args, cb, upstream;
     args = slice$.call(arguments);
     cb = args.pop();
-    upstream = (args[0] || {}).upstream || 'upstream';
+    upstream = (args[0] || {}).upstream || 'origin';
     exec("git push " + upstream + " && git push " + upstream + " --tags", function(err, stdout, stderr){
       if (err) {
         cb(
@@ -86,7 +86,6 @@
     options || (options = {});
     parallel = eventStream.through(function(data){
       var done, end, this$ = this;
-      gutil.log('data', data);
       done = 0;
       end = function(){
         done = done + 1;
