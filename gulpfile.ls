@@ -35,11 +35,11 @@ gulp.task 'bump' ->
     .pipe gulp-bump 'minor'
     .pipe gulp.dest '.'
 
-gulp.task 'commit' ->
+gulp.task 'commit' <[bump]> ->
   return gulp.src 'package.json'
     .pipe commit message: 'chore(release): <%= package.version %>'
 
-gulp.task 'tag' ->
+gulp.task 'tag' <[commit]> ->
   return gulp.src 'package.json'
     .pipe tag name: 'V<%= package.version %>V', message: 'chore(release): <%= package.version %>' 
 
@@ -49,5 +49,5 @@ gulp.task 'push' !(cb) ->
 gulp.task 'publish' !(cb) ->
   publish cb
 
-gulp.task 'release' <[bump commit tag]> !->
-  gulp.run 'push', 'publish'
+gulp.task 'release' <[tag]> !->
+  # gulp.run 'push', 'publish'
