@@ -25,29 +25,10 @@ gulp.task 'default' <[clean]> !->
     .pipe gulp-livescript!
     .pipe gulp.dest '.'
 
-#
-# release
-#
-const {commit, tag, push, publish} = gulp-release
-
-gulp.task 'bump' ->
+gulp.task 'release' <[default]> ->
   return gulp.src 'package.json'
     .pipe gulp-bump 'minor'
     .pipe gulp.dest '.'
-
-gulp.task 'commit' <[bump]> ->
-  return gulp.src 'package.json'
-    .pipe commit message: 'chore(release): <%= package.version %>'
-
-gulp.task 'tag' <[commit]> ->
-  return gulp.src 'package.json'
-    .pipe tag name: 'V<%= package.version %>V', message: 'chore(release): <%= package.version %>' 
-
-gulp.task 'push' !(cb) ->
-  push cb
-
-gulp.task 'publish' !(cb) ->
-  publish cb
-
-gulp.task 'release' <[tag]> !->
-  # gulp.run 'push', 'publish'
+    .pipe gulp-release do
+      commit: do
+        message: 'chore(release): <%= package.version %>'

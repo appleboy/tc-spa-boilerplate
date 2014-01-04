@@ -1,6 +1,6 @@
 {
   "name": "gulp-release",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Release plugin for gulp",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,8 @@
   },
   "keywords": [
     "LiveScript",
-    "gulp"
+    "gulp",
+    "gulpfriendly"
   ],
   "author": {
     "name": "tomchentw",

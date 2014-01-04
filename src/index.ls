@@ -47,18 +47,45 @@ const tag = (options) -> event-stream.map !(file, cb) ->
 
 const push = !(...args) ->
   const cb      = args.pop!
-  const options = args.0 or {}
-  setTimeout cb, 5000
+  const {
+    upstream or 'upstream'
+  } = args.0 or {}
 
+  (err, stdout, stderr) <-! exec "git push #{ upstream } && git push #{ upstream } --tags"
+  if err
+    err |> toPluginError |> cb
+    return
+  
+  gutil.log "pushed : #{ upstream }"
+  cb!
 
 const publish = !(...args) ->
   const cb      = args.pop!
-  const options = args.0 or {}
-  setTimeout cb, 5000
+  # setTimeout cb, 5000
+  (err, stdout, stderr) <-! exec "npm publish"
+  if err
+    err |> toPluginError |> cb
+    return
+  
+  gutil.log "published"
+  cb!
 
-
-
-const release = (options) ->
-
+const release = (options || {}) ->
+  const parallel = event-stream.through !(data) ->
+    gutil.log 'data' data
+    done = 0
+    const end = !~>
+      done := done + 1
+      @resume! if done is 2
+    
+    push options.push, end      
+    publish end
+    @pause!
+  #
+  # 
+  event-stream.pipeline do
+    commit options.commit
+    tag options.tag
+    parallel
 
 module.exports = release <<< {commit, tag, push, publish}
