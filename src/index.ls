@@ -48,7 +48,7 @@ const tag = (options) -> event-stream.map !(file, cb) ->
 const push = !(...args) ->
   const cb      = args.pop!
   const {
-    upstream or 'upstream'
+    upstream or 'origin'
   } = args.0 or {}
 
   (err, stdout, stderr) <-! exec "git push #{ upstream } && git push #{ upstream } --tags"
@@ -72,7 +72,6 @@ const publish = !(...args) ->
 
 const release = (options || {}) ->
   const parallel = event-stream.through !(data) ->
-    gutil.log 'data' data
     done = 0
     const end = !~>
       done := done + 1

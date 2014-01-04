@@ -120,7 +120,7 @@ tag message : `git tag -m #{ message }`
 ### options.push
 ```javascript
 {
-  upstream: 'upstream'
+  upstream: 'origin'
 }
 ```
 
