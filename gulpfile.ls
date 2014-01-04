@@ -16,12 +16,12 @@ gulp.task 'clean' ->
   return gulp.src <[tmp/]>
     .pipe gulp-clean!
 
-gulp.task 'test' <[compile]> !->
-  gulp.src 'tmp/spec.js'
+gulp.task 'test' <[compile]> ->
+  return gulp.src 'tmp/spec.js'
     .pipe gulp-mocha!
 
-gulp.task 'default' <[clean]> !->
-  gulp.src 'src/index.ls'
+gulp.task 'default' <[clean]> ->
+  return gulp.src 'src/index.ls'
     .pipe gulp-livescript!
     .pipe gulp.dest '.'
 
