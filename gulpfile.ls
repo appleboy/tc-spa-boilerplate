@@ -27,7 +27,7 @@ gulp.task 'default' <[clean]> !->
 
 gulp.task 'release' <[default]> ->
   return gulp.src 'package.json'
-    .pipe gulp-bump 'minor'
+    .pipe gulp-bump bump: 'patch'
     .pipe gulp.dest '.'
     .pipe gulp-release do
       commit: do

@@ -19,7 +19,7 @@ gulp.task('default', function(){
 });
 gulp.task('release', ['default'], function(){
   return gulp.src('package.json')
-    .pipe(gulpBump('minor'))
+    .pipe(gulpBump({ bump: 'patch' }))
     .pipe(gulp.dest('.'))
     .pipe(gulpRelease({
       commit: {
@@ -43,7 +43,7 @@ var gulpLivescript = require('gulp-livescript'),
 
 gulp.task('bump', function(){
   return gulp.src('package.json')
-    .pipe(gulpBump('minor'))
+    .pipe(gulpBump({ bump: 'patch' }))
     .pipe(gulp.dest('.'));
 });
 gulp.task('commit', ['bump'], function(){
