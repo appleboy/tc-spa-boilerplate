@@ -4,7 +4,7 @@
 
 #### Features
 
-* **index:** explicitly pass false to option will skip task ([5b2581a85723a74cbe1cb525bb99becf375a288a](git://github.com/tomchentw/gulp-release.git/commit/5b2581a85723a74cbe1cb525bb99becf375a288a))
+* **index:** explicitly pass false to option will skip task ([5b2581a85723a74cbe1cb525bb99becf375a288a](https://github.com/tomchentw/gulp-release/commit/5b2581a85723a74cbe1cb525bb99becf375a288a))
 
 
 <a name="0.0.3"></a>
@@ -17,12 +17,12 @@
 
 #### Bug Fixes
 
-* **push:** change upstream default to origin ([76c1c875341a032f8de06c797e809a011913f3b3](git://github.com/tomchentw/gulp-release.git/commit/76c1c875341a032f8de06c797e809a011913f3b3))
+* **push:** change upstream default to origin ([76c1c875341a032f8de06c797e809a011913f3b3](https://github.com/tomchentw/gulp-release/commit/76c1c875341a032f8de06c797e809a011913f3b3))
 
 
 #### Features
 
-* **gulp-release:** add commit and tag support ([5e5fb264dc0297fe60fa30391753b843b245e29f](git://github.com/tomchentw/gulp-release.git/commit/5e5fb264dc0297fe60fa30391753b843b245e29f))
-* **release:** add push, publish and release method ([476d630fc1f202dfa526334f7cfc55af58eeefd8](git://github.com/tomchentw/gulp-release.git/commit/476d630fc1f202dfa526334f7cfc55af58eeefd8))
+* **gulp-release:** add commit and tag support ([5e5fb264dc0297fe60fa30391753b843b245e29f](https://github.com/tomchentw/gulp-release/commit/5e5fb264dc0297fe60fa30391753b843b245e29f))
+* **release:** add push, publish and release method ([476d630fc1f202dfa526334f7cfc55af58eeefd8](https://github.com/tomchentw/gulp-release/commit/476d630fc1f202dfa526334f7cfc55af58eeefd8))
 
 
