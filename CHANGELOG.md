@@ -1,3 +1,12 @@
+<a name="0.0.4"></a>
+### 0.0.4 (2014-01-06)
+
+
+#### Features
+
+* **index:** explicitly pass false to option will skip task ([5b2581a85723a74cbe1cb525bb99becf375a288a](git://github.com/tomchentw/gulp-release.git/commit/5b2581a85723a74cbe1cb525bb99becf375a288a))
+
+
 <a name="0.0.3"></a>
 ### 0.0.3 (2014-01-05)
 

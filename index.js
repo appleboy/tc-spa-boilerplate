@@ -82,22 +82,36 @@
     });
   };
   release = function(options){
-    var parallel;
+    var parallel, streams;
     options || (options = {});
     parallel = eventStream.through(function(data){
-      var done, end, this$ = this;
-      done = 0;
+      var done, count, end, this$ = this;
+      done = count = 0;
       end = function(){
         done = done + 1;
-        if (done === 2) {
+        if (done === count) {
           this$.resume();
         }
       };
-      push(options.push, end);
-      publish(end);
+      if (options.push !== false) {
+        count += 1;
+        push(options.push, end);
+      }
+      if (options.publish !== false) {
+        count += 1;
+        publish(end);
+      }
       this.pause();
     });
-    return eventStream.pipeline(commit(options.commit), tag(options.tag), parallel);
+    streams = [];
+    if (options.commit !== false) {
+      streams.push(commit(options.commit));
+    }
+    if (options.tag !== false) {
+      streams.push(tag(options.tag));
+    }
+    streams.push(parallel);
+    return eventStream.pipeline.apply(eventStream, streams);
   };
   module.exports = (release.commit = commit, release.tag = tag, release.push = push, release.publish = publish, release);
 }).call(this);
