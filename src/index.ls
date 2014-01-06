@@ -72,19 +72,25 @@ const publish = !(...args) ->
 
 const release = (options || {}) ->
   const parallel = event-stream.through !(data) ->
-    done = 0
+    done = count = 0
     const end = !~>
       done := done + 1
-      @resume! if done is 2
+      @resume! if done is count
     
-    push options.push, end      
-    publish end
+    unless options.push is false
+      count += 1
+      push options.push, end
+
+    unless options.publish is false
+      count += 1
+      publish end
     @pause!
   #
-  # 
-  event-stream.pipeline do
-    commit options.commit
-    tag options.tag
-    parallel
-
+  #
+  const streams = []
+  streams.push commit options.commit unless options.commit is false
+  streams.push tag options.tag unless options.tag is false
+  streams.push parallel
+  event-stream.pipeline ...streams
+  
 module.exports = release <<< {commit, tag, push, publish}

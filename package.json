@@ -4,7 +4,7 @@
   "description": "Release plugin for gulp",
   "main": "index.js",
   "scripts": {
-    "build": "gulp --require LiveScript",
+    "build": "gulp build --require LiveScript",
     "clean": "gulp clean --require LiveScript",
     "test": "gulp test --require LiveScript",
     "release": "gulp release --require LiveScript"

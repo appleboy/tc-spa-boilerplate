@@ -24,7 +24,8 @@ gulp.task('release', ['default'], function(){
     .pipe(gulpRelease({
       commit: {
         message: 'chore(release): <%= package.version %>'
-      }
+      },
+      publish: false // explicitly pass false will skip this step
     }));
 });
 ```
@@ -76,9 +77,11 @@ As you can see, the `gulp-release` contains four parts, and can be configured se
 {
   commit: {},
   tag: {},
-  push: {}
+  push: {},
+  publish: false // explicitly pass false will skip this step
 }
 ```
+Pass `false` to skip the step, other value except `false` will execute that step (yes, even `undefined`).
 
 ### options.commit
 ```javascript
@@ -127,6 +130,15 @@ tag message : `git tag -m #{ message }`
 #### upstream
 where this release will be pushed to : `git push #{ upstream }`
 
+
+### options.publish
+```javascript
+{
+  publish: true
+}
+```
+
+Will publish this package to `npm`.
 
 ## Contributing
 

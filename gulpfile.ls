@@ -22,12 +22,12 @@ gulp.task 'test' <[compile]> ->
   return gulp.src 'tmp/spec.js'
     .pipe gulp-mocha!
 
-gulp.task 'default' <[clean]> ->
+gulp.task 'build' <[clean]> ->
   return gulp.src 'src/index.ls'
     .pipe gulp-livescript!
     .pipe gulp.dest '.'
 
-gulp.task 'release' <[default]> ->
+gulp.task 'release' <[build]> ->
   const bumpStream = do
     gulp.src 'package.json'
       .pipe gulp-bump bump: 'patch'
