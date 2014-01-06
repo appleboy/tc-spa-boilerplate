@@ -1,6 +1,6 @@
 # gulp-release
 
-[![NPM version](https://badge.fury.io/js/gulp-release.png)](http://badge.fury.io/js/gulp-release) [![Build Status](https://secure.travis-ci.org/tomchentw/gulp-release.png)](http://travis-ci.org/tomchentw/gulp-release) [![Code Climate](https://codeclimate.com/github/tomchentw/gulp-release.png)](https://codeclimate.com/github/tomchentw/gulp-release)
+[![NPM version](https://badge.fury.io/js/gulp-release.png)](http://badge.fury.io/js/gulp-release) [![Build Status](https://secure.travis-ci.org/tomchentw/gulp-release.png)](http://travis-ci.org/tomchentw/gulp-release) [![Code Climate](https://codeclimate.com/github/tomchentw/gulp-release.png)](https://codeclimate.com/github/tomchentw/gulp-release) [![Dependency Status](https://gemnasium.com/tomchentw/gulp-release.png)](https://gemnasium.com/tomchentw/gulp-release)
 
 A gulp friendly release helper.
 
