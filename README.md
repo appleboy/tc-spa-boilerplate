@@ -5,6 +5,27 @@
 A gulp friendly release helper.
 
 
+## Information
+
+<table>
+<tr> 
+<td>Package</td><td>gulp-release</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Release plugin for Gulp (gulpjs.com)</td>
+</tr>
+<tr>
+<td>Node Version</td>
+<td>>= 0.8</td>
+</tr>
+<tr>
+<td>Gulp Version</td>
+<td>3.x</td>
+</tr>
+</table>
+
+
 ## Usage
 
 We recommend you use [`gulp-bump`](https://github.com/stevelacy/gulp-bump) as your version bumping library. Examples:  
