@@ -1,3 +1,12 @@
+<a name="0.0.6"></a>
+### 0.0.6 (2014-01-11)
+
+
+#### Bug Fixes
+
+* **index.js:** generate it with bare option and close #4 ([0ead93cb1d9e475b0e6ca081a89ec43a4299afb1](https://github.com/tomchentw/gulp-release/commit/0ead93cb1d9e475b0e6ca081a89ec43a4299afb1))
+
+
 <a name="0.0.5"></a>
 ### 0.0.5 (2014-01-06)
 
