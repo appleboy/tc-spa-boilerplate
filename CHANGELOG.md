@@ -1,3 +1,12 @@
+<a name="0.0.7"></a>
+### 0.0.7 (2014-01-11)
+
+
+#### Bug Fixes
+
+* **gulpfile:** gulp-bump has a breaking change ([fb065c9db9631dc8aa581b7db9e35360bfaf865b](https://github.com/tomchentw/gulp-release/commit/fb065c9db9631dc8aa581b7db9e35360bfaf865b))
+
+
 <a name="0.0.6"></a>
 ### 0.0.6 (2014-01-11)
 
