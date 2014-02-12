@@ -6,7 +6,7 @@ This project is unpublished from NPM and just keep for recipe.
 
 Modify yourself.
 
-### LiveScript (see compiled [javascript]() )
+### LiveScript (see compiled [javascript](https://github.com/tomchentw/gulp-release/blob/master/README.md#javascript) )
 
 ```LiveScript
 require! {
