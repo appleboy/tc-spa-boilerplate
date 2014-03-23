@@ -54,7 +54,7 @@ test: $(testDeps)
 release: install
 	NODE_ENV=production $(bin)/lsc client
 
-ifeq (true, releaseStatic)
+ifeq (true, $(releaseStatic))
 	cp -r public/* $(tempFolder)
 	cp -r tmp/public/* $(tempFolder)
 	git checkout $(releaseBranch)
