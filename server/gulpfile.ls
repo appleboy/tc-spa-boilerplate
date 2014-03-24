@@ -3,11 +3,16 @@ require! {
   connect
 }
 require! {
-  '../client/gulpfile'
   '../config'
 }
 
-gulp.task 'server' <[ client ]> !(done) ->
+const serverTaskDependencies = unless config.env.is 'production'
+  require '../client/gulpfile'
+  <[ client ]>
+else
+  []
+
+gulp.task 'server' serverTaskDependencies, !(done) ->
   connect!
     ..use require('connect-livereload')! unless config.env.is 'production'
 
