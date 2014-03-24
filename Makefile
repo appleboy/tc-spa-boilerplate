@@ -63,8 +63,8 @@ else
 	cp -r tmp/public/* $(tempFolder)/public
 	make clean
 	cp -r . $(tempFolder)
+	rm -rf $(tempFolder)/client
 	git checkout $(releaseBranch)
-	rm -rf client
 endif
 
 	git clean -f -d
