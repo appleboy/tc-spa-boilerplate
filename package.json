@@ -24,12 +24,21 @@
     "url": "https://github.com/tomchentw/tc-spa-boilerplate/issues"
   },
   "homepage": "https://github.com/tomchentw/tc-spa-boilerplate",
-  "devDependencies": {
+  "engines": {
+    "node": "0.10.x"
+  },
+  "scripts": {
+    "start": "lsc index"
+  },
+  "dependencies": {
     "LiveScript": "^1.2.0",
+    "connect": "^2.13.0",
+    "q": "^1.0.0"
+  },
+  "devDependencies": {
     "bower": "^1.2.8",
     "highlight.js": "^8.0.0",
     "tiny-lr": "^0.0.5",
-    "connect": "^2.13.0",
     "connect-livereload": "^0.3.2",
     "protractor": "^0.20.1",
     "coveralls": "^2.8.0",

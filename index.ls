@@ -1,10 +1,5 @@
 require! {
-  gulp
-}
-require! {
-  './gulpfile'
+  './server/index'
 }
 
-gulp.task 'publish' <[ publish:lib publish:changelog ]>
-
-gulp.start 'publish'
+index!

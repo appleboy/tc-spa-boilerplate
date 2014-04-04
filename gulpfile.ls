@@ -1,3 +1,5 @@
+!function exportedTasksDefinedBeginsHere
+  gulp.task 'publish' <[ publish:lib publish:changelog ]>
 /*
  * Implementation details
  */
@@ -35,3 +37,5 @@ gulp.task 'publish:changelog' <[ publish:bump ]> ->
   return gulp.src <[ package.json CHANGELOG.md ]>
   .pipe gulp-conventional-changelog!
   .pipe gulp.dest '.'
+# define!
+exportedTasksDefinedBeginsHere!
