@@ -89,7 +89,7 @@ gulp.task 'client:templates' ->
   .pipe gulp-jade pretty: !config.env.is 'production'
   .pipe gulp-angular-templatecache do
     root: '/'
-    module: 'npmgems.templates'
+    module: 'tc-spa-boilerplate.templates'
     standalone: true
   stream.=pipe gulp-uglify! if config.env.is 'production'
   return stream.pipe gulp.dest 'tmp/.js-cache'
@@ -104,7 +104,13 @@ gulp.task 'client:js:ls' ->
   stream.=pipe gulp-uglify! if config.env.is 'production'
   return stream.pipe gulp.dest 'tmp/.js-cache'
 
-gulp.task 'client:js' <[ client:templates client:js:ls ]> ->
+gulp.task 'client:js:bower_components' ->
+  # stream = gulp.src [
+  # ]
+  # stream.=pipe gulp-uglify! if config.env.is 'production'
+  # return stream.pipe gulp.dest 'tmp/.js-cache'
+
+gulp.task 'client:js' <[ client:templates client:js:ls client:js:bower_components ]> ->
   return gulp.src [
     'bower_components/angular/angular.min.js'
     'bower_components/angular-sanitize/angular-sanitize.min.js'
