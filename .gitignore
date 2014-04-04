@@ -1,25 +1,3 @@
-# Created by bundle gem [NAME]
-
-### Bundler ###
-*.gem
-*.rbc
-.bundle
-.config
-.yardoc
-Gemfile.lock
-InstalledFiles
-_yardoc
-coverage
-doc/
-lib/bundler/man
-pkg
-rdoc
-spec/reports
-test/tmp
-test/version_tmp
-tmp
-### Bundler End ###
-
 # Created by http://gitignore.io
 
 ### Node ###
@@ -45,3 +23,7 @@ node_modules
 ### Bower ###
 bower_components
 ### Bower End ###
+
+### Project ###
+tmp
+### Project End ###
