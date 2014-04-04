@@ -16,6 +16,7 @@
     "**/.*",
     "app",
     "bower_components",
+    "client",
     "config",
     "lib",
     "node_modules",
@@ -24,14 +25,10 @@
     "server",
     "test",
     "tmp",
-    "vendor",
-    "Gemfile",
     "gulpfile.ls",
     "index.ls",
     "Makefile",
-    "package.json",
-    "Rakefile",
-    "tc-spa-boilerplate.gemspec"
+    "package.json"
   ],
   "dependencies": {
     "angular": "~1.2.13"
@@ -39,7 +36,6 @@
   "devDependencies": {
     "angular-sanitize": "~1.2.13",
     "angular-mocks": "~1.2.13",
-    "google-code-prettify": "~1.0.1",
     "angular-bootstrap": "~0.10.0",
     "twbs-bootstrap-sass": "~3.1.1"
   }
