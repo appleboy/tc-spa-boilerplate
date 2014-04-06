@@ -6,7 +6,7 @@ developBranch := master
 
 testDeps			:= test.karma test.protractor# test.mocha
 releaseStatic	:= true
-publishDeps		:= publish.git publish.bower publish.gems# publish.npm
+publishDeps		:= publish.git publish.bower# publish.gems publish.npm
 
 tempFolder    := $(shell mktemp -d -t $(shell basename "$PWD"))
 lastCommit    := $(shell git rev-parse --short=10 HEAD)
