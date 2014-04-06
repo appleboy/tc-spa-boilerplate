@@ -24,8 +24,11 @@ install:
 	npm install
 	$(bin)/bower install
 
-clean:
-	rm -rf node_modules bower_components tmp pkg
+clean.tmp:
+	rm -rf tmp pkg
+
+clean: clean.tmp
+	rm -rf node_modules bower_components
 
 server: install
 	$(gulp) --gulpfile ./server/gulpfile.ls server
@@ -53,7 +56,7 @@ test.mocha: install
 
 test: $(testDeps)
 
-release: install
+release: clean.tmp install
 	NODE_ENV=production $(gulp) --gulpfile ./client/gulpfile.ls client
 
 ifeq (true, $(releaseStatic))
