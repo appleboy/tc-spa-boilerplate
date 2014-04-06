@@ -51,8 +51,6 @@ function prependTimestampFactory (filepath)
     |> valueOf.bind
   else
     identity
-
-const CLIENT_VIEW_PATH = 'client/views/*.jade'
 /*
  * client tasks
  */
@@ -67,7 +65,7 @@ gulp.task 'client:js:partials' ->
   .pipe gulp.dest 'tmp/.js-cache/partials'
 
 gulp.task 'client:html' <[ client:html:partials client:js:partials ]> ->
-  return gulp.src CLIENT_VIEW_PATH
+  return gulp.src 'client/views/*.jade'
   .pipe gulp-jade do
     pretty: !config.env.is 'production'
     locals:
