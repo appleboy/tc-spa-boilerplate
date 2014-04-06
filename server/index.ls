@@ -12,7 +12,7 @@ module.exports = ->
   connect!
     ..use require('connect-livereload')! unless config.env.is 'production'
 
-    ..use connect.static 'public'
+    ..use connect.static 'public' maxAge: Infinity
     ..use connect.static 'tmp/public' unless config.env.is 'production'
 
     ..listen config.port.server, !->
