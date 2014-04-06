@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "TO::: Write a short summary. Required. :::DO",
   "longDescription": "TO::: Write a longer description. Optional. :::DO",
-  "main": "tc-spa-boilerplate.js",
+  "main": "index.ls",
   "repository": {
     "type": "git",
     "url": "https://github.com/tomchentw/tc-spa-boilerplate"
