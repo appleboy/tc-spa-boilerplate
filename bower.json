@@ -30,10 +30,8 @@
     "Makefile",
     "package.json"
   ],
-  "dependencies": {
-    "angular": "~1.2.13"
-  },
   "devDependencies": {
+    "angular": "~1.2.13",
     "angular-sanitize": "~1.2.13",
     "angular-mocks": "~1.2.13",
     "angular-bootstrap": "~0.10.0",
