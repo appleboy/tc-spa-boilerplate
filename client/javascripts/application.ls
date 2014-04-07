@@ -1,4 +1,4 @@
-angular.module 'demo' <[
+angular.module 'application' <[
   ngSanitize
   ui.bootstrap
 ]>

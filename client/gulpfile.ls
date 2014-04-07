@@ -113,7 +113,7 @@ gulp.task 'client:templates' ->
   .pipe gulp-jade pretty: !config.env.is 'production'
   .pipe gulp-angular-templatecache do
     root: '/'
-    module: 'tc-spa-boilerplate.templates'
+    module: 'application.templates'
     standalone: true
   stream.=pipe gulp-uglify! if config.env.is 'production'
   return stream.pipe gulp.dest 'tmp/.js-cache'
