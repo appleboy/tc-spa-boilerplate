@@ -1,9 +1,14 @@
 require! {
   gulp
+  'gulp-nodemon'
 }
 require! {
   '../client/gulpfile'
-  './index'
 }
 
-gulp.task 'server' <[ client ]> index
+gulp.task 'server' <[ client ]> !->
+  gulp-nodemon do
+    script: './index.ls'
+    execMap: ls: 'lsc'
+    ignore: '../tmp/**'
+
