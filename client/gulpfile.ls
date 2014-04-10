@@ -18,7 +18,7 @@ require! {
 require! {
   gulp
   'gulp-jade'
-  'gulp-ruby-sass'
+  'gulp-sass'
   'gulp-minify-css'
   'gulp-angular-templatecache'
   'gulp-uglify'
@@ -82,12 +82,11 @@ gulp.task 'client:html' <[ client:html:partials client:js:partials ]> ->
 
 gulp.task 'client:css:scss' ->
   return gulp.src 'client/stylesheets/application.scss'
-  .pipe gulp-ruby-sass do
-    loadPath: [
+  .pipe gulp-sass do
+    includePaths: [
       path.join ...<[ bower_components twbs-bootstrap-sass vendor assets stylesheets ]>
     ]
-    cacheLocation: 'tmp/.sass-cache'
-    style: if config.env.is 'production' then 'compressed' else 'nested'
+    outputStyle: if config.env.is 'production' then 'compressed' else 'nested'
   .pipe gulp.dest 'tmp/.css-cache'
 
 gulp.task 'client:css:bower_components' ->
