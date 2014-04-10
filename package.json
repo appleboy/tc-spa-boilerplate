@@ -1,6 +1,6 @@
 {
   "name": "tc-spa-boilerplate",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "TO::: Write a short summary. Required. :::DO",
   "longDescription": "TO::: Write a longer description. Optional. :::DO",
   "main": "index.ls",
