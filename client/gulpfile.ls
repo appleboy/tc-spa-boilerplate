@@ -141,7 +141,6 @@ gulp.task 'client:js:bower_components' ->
 gulp.task 'client:js' <[ client:templates client:js:ls client:js:bower_components ]> ->
   stream = gulp.src [
     'bower_components/angular/angular.min.js'
-    'bower_components/angular-sanitize/angular-sanitize.min.js'
     'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'
     'tmp/.js-cache/*.js'
   ]

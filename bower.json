@@ -30,11 +30,12 @@
     "Makefile",
     "package.json"
   ],
-  "devDependencies": {
+  "dependencies": {
     "angular": "~1.2.13",
-    "angular-sanitize": "~1.2.13",
-    "angular-mocks": "~1.2.13",
     "angular-bootstrap": "~0.10.0",
     "twbs-bootstrap-sass": "~3.1.1"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.2.13"
   }
 }
