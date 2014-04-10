@@ -5,7 +5,6 @@ releaseBranch := gh-pages
 developBranch := master
 
 testDeps			:= test.karma test.protractor# test.mocha
-publishDeps		:= publish.git publish.bower# publish.gems publish.npm
 
 tempFolder    := $(shell mktemp -d -t $(shell basename "$PWD"))
 lastCommit    := $(shell git rev-parse --short=10 HEAD)
@@ -76,10 +75,8 @@ release: clean.tmp install
 lib: install
 	$(bin)/karma start --auto-watch --no-single-run test/karma.js
 
-publish.gulp: test
+publish: test
 	$(gulp) publish
 	git add -A
 	git commit -m $(newPublishMsg)
 	git tag -a v$(version) -m $(newPublishMsg)
-
-publish: $(publishDeps)
