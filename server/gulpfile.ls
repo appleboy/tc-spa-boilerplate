@@ -1,14 +1,16 @@
 require! {
   gulp
-  'gulp-nodemon'
 }
 require! {
   '../client/gulpfile'
+  '../config'
 }
 
 gulp.task 'server' <[ client ]> ->
-  gulp-nodemon do
-    script: './index.ls'
+  return require './index' if config.env.is 'production'
+
+  require('gulp-nodemon') do
+    script: './server/index.ls'
     execMap: ls: 'lsc'
     ignore: './tmp/**'
 
