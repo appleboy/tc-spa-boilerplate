@@ -5,7 +5,6 @@ releaseBranch := gh-pages
 developBranch := master
 
 testDeps			:= test.karma test.protractor# test.mocha
-releaseStatic	:= true
 publishDeps		:= publish.git publish.bower# publish.gems publish.npm
 
 tempFolder    := $(shell mktemp -d -t $(shell basename "$PWD"))
@@ -58,18 +57,9 @@ test: $(testDeps)
 release: clean.tmp install
 	NODE_ENV=production $(gulp) --gulpfile ./client/gulpfile.ls client
 
-ifeq (true, $(releaseStatic))
 	cp -r public/* $(tempFolder)
 	cp -r tmp/public/* $(tempFolder)
 	git checkout $(releaseBranch)
-else	
-	cp -r public $(tempFolder)
-	cp -r tmp/public/* $(tempFolder)/public
-	make clean
-	cp -r . $(tempFolder)
-	rm -rf $(tempFolder)/client
-	git checkout $(releaseBranch)
-endif
 
 	git clean -f -d
 	git rm -rf .
@@ -91,17 +81,5 @@ publish.gulp: test
 	git add -A
 	git commit -m $(newPublishMsg)
 	git tag -a v$(version) -m $(newPublishMsg)
-
-publish.git: publish.gulp
-	git push
-
-publish.bower: publish.gulp
-	git push --tags
-
-publish.gems: publish.gulp
-	rake release
-
-publish.npm: publish.gulp
-	npm publish
 
 publish: $(publishDeps)
