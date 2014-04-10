@@ -75,8 +75,8 @@ gulp.task 'client:html' <[ client:html:partials client:js:partials ]> ->
           path.extname it .substr 1
           fs.readFileSync it, 'utf8'
         .value
-      javascriptIncludeTag: prependTimestampFactory './tmp/js-manifest/rev-manifest.json'
-      stylesheetLinkTag: prependTimestampFactory './tmp/css-manifest/rev-manifest.json'
+      javascriptIncludeTag: prependTimestampFactory './tmp/.js-manifest/rev-manifest.json'
+      stylesheetLinkTag: prependTimestampFactory './tmp/.css-manifest/rev-manifest.json'
 
   .pipe gulp.dest 'tmp/public'
   stream.=pipe gulp-livereload(livereload) unless config.env.is 'production'
@@ -101,12 +101,15 @@ gulp.task 'client:css:bower_components' ->
 gulp.task 'client:css' <[ client:css:scss client:css:bower_components ]> ->
   stream = gulp.src 'tmp/.css-cache/*.css'
   .pipe gulp-concat 'application.css'
-  stream.=pipe gulp-rev! if config.env.is 'production'
+  if config.env.is 'production'
+    stream.=pipe gulp-minify-css!
+    .pipe gulp-rev!
   stream.=pipe gulp.dest 'tmp/public'
-  stream.=pipe gulp-livereload(livereload) unless config.env.is 'production'
   if config.env.is 'production'
     stream.=pipe gulp-rev.manifest!
-    .pipe gulp.dest 'tmp/css-manifest'
+    .pipe gulp.dest 'tmp/.css-manifest'
+  else
+    stream.=pipe gulp-livereload(livereload)
   return stream
 
 gulp.task 'client:templates' ->
@@ -145,10 +148,11 @@ gulp.task 'client:js' <[ client:templates client:js:ls client:js:bower_component
   .pipe gulp-concat 'application.js'
   stream.=pipe gulp-rev! if config.env.is 'production'
   stream.=pipe gulp.dest 'tmp/public'
-  stream.=pipe gulp-livereload(livereload) unless config.env.is 'production'
   if config.env.is 'production'
     stream.=pipe gulp-rev.manifest!
-    .pipe gulp.dest 'tmp/js-manifest'
+    .pipe gulp.dest 'tmp/.js-manifest'
+  else
+    stream.=pipe gulp-livereload(livereload)
   return stream
 # define!
 exportedTasksDefinedBeginsHere!

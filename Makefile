@@ -18,7 +18,7 @@ newPublishMsg = "chore(publish): v$(version) by Makefile"
 .PHONY: client server lib test
 
 install:
-	mkdir -p tmp
+	mkdir -p tmp/public
 	npm install
 	$(bin)/bower install
 
@@ -28,7 +28,7 @@ clean.tmp:
 clean: clean.tmp
 	rm -rf node_modules bower_components
 
-server: install
+server: clean.tmp install
 	$(gulp) --gulpfile ./server/gulpfile.ls server
 
 test.karma: install
@@ -52,7 +52,7 @@ test.protractor: install
 test.mocha: install
 	$(bin)/mocha test/**/*.ls --compilers ls:LiveScript
 
-test: $(testDeps)
+test: clean.tmp $(testDeps)
 
 release: clean.tmp install
 	NODE_ENV=production $(gulp) --gulpfile ./client/gulpfile.ls client
