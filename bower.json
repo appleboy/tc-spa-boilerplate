@@ -14,7 +14,6 @@
   "private": false,
   "ignore": [
     "**/.*",
-    "app",
     "bower_components",
     "client",
     "config",
@@ -33,6 +32,7 @@
   "dependencies": {
     "angular": "~1.2.13",
     "angular-bootstrap": "~0.10.0",
+    "angular-ga": "~0.1.0",
     "twbs-bootstrap-sass": "~3.1.1"
   },
   "devDependencies": {

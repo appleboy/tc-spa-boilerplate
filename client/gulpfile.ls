@@ -133,10 +133,11 @@ gulp.task 'client:js:ls' ->
   return stream.pipe gulp.dest 'tmp/.js-cache'
 
 gulp.task 'client:js:bower_components' ->
-  # stream = gulp.src [
-  # ]
-  # stream.=pipe gulp-uglify! if config.env.is 'production'
-  # return stream.pipe gulp.dest 'tmp/.js-cache'
+  stream = gulp.src [
+    'bower_components/angular-ga/ga.js'
+  ]
+  stream.=pipe gulp-uglify! if config.env.is 'production'
+  return stream.pipe gulp.dest 'tmp/.js-cache'
 
 gulp.task 'client:js' <[ client:templates client:js:ls client:js:bower_components ]> ->
   stream = gulp.src [
