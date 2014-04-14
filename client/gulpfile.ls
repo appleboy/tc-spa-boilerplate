@@ -34,7 +34,6 @@ require! {
 unless config.env.is 'production'
   require! {
     'tiny-lr'
-    'connect-livereload'
     'gulp-livereload'
   }
   const livereload = tiny-lr!
