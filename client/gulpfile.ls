@@ -57,7 +57,9 @@ function prependTimestampFactory (filepath)
 gulp.task 'client:html:partials' ->
   return gulp.src 'client/views/partials/*.jade'
   # {doctype: 'html'} https://github.com/visionmedia/jade/issues/1180#issuecomment-40351567
-  .pipe gulp-jade pretty: true, doctype: 'html'
+  .pipe gulp-jade do
+    pretty: true
+    doctype: 'html'
   .pipe gulp.dest 'tmp/.html-cache/partials'
 
 gulp.task 'client:js:partials' ->
@@ -115,7 +117,9 @@ gulp.task 'client:css' <[ client:css:scss client:css:bower_components ]> ->
 
 gulp.task 'client:templates' ->
   stream = gulp.src 'client/templates/**/*.jade'
-  .pipe gulp-jade pretty: !config.env.is 'production', doctype: 'html'
+  .pipe gulp-jade do
+    pretty: !config.env.is 'production'
+    doctype: 'html'
   .pipe gulp-angular-templatecache do
     root: '/'
     module: 'application.templates'
