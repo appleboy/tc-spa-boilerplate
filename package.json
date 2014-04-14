@@ -1,8 +1,7 @@
 {
   "name": "tc-spa-boilerplate",
   "version": "0.0.1",
-  "description": "TO::: Write a short summary. Required. :::DO",
-  "longDescription": "TO::: Write a longer description. Optional. :::DO",
+  "description": "Boilerplate for AngularJS Single Page Application by Tom Chen",
   "main": "index.ls",
   "repository": {
     "type": "git",

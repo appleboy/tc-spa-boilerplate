@@ -4,7 +4,7 @@
   "authors": [
     "tomchentw <developer@tomchentw.com>"
   ],
-  "description": "TO::: Write a short summary. Required. :::DO",
+  "description": "Boilerplate for AngularJS Single Page Application by Tom Chen",
   "main": "tc-spa-boilerplate.js",
   "keywords": [
     "TODO: Add your keywords"
