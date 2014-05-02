@@ -3,14 +3,14 @@ html(ng-app="application")
   head
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
-    base(href="/")
-    title tc-spa-boilerplate
-    meta(name="description" content="Boilerplate for AngularJS Single Page Application by Tom Chen")
+    script. document.write("<base href='" + location.pathname + "'>");
+    title= pkg.name
+    meta(name="description" content=pkg.description)
     meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0")
     meta(property="og:type" content="website")
     meta(property="og:url" content="http://tc-spa-boilerplate.tomchentw.com")
-    meta(property="og:title" content="tc-spa-boilerplate")
-    meta(property="og:description" content="Boilerplate for AngularJS Single Page Application by Tom Chen")
+    meta(property="og:title" content=pkg.name)
+    meta(property="og:description" content=pkg.description)
 
     <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 

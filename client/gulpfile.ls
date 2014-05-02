@@ -29,6 +29,7 @@ require! {
   'gulp-rev'
 }
 require! {
+  pkg: '../package.json'
   '../config'
 }
 unless config.env.is 'production'
@@ -73,6 +74,7 @@ gulp.task 'client:html' <[ client:html:partials client:js:partials ]> ->
     pretty: !config.env.is 'production'
     doctype: 'html'
     locals:
+      pkg: pkg
       highlight: ->
         hljs.highlight do
           path.extname it .substr 1
