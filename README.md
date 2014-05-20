@@ -1,10 +1,5 @@
-# tc-spa-boilerplate
+# tc-spa-boilerplate [![Travis CI][travis-image]][travis-url] [![Quality][codeclimate-image]][codeclimate-url] [![Coverage][coveralls-image]][coveralls-url] [![Dependencies][gemnasium-image]][gemnasium-url]
 > Boilerplate for AngularJS *Single Page Application* by Tom Chen
-
-[![Travis CI   ](https://travis-ci.org/tomchentw/tc-spa-boilerplate.svg?branch=master)              ](https://travis-ci.org/tomchentw/tc-spa-boilerplate)
-[![Quality     ](https://img.shields.io/codeclimate/github/tomchentw/tc-spa-boilerplate.svg)        ](https://codeclimate.com/github/tomchentw/tc-spa-boilerplate)
-[![Coverage    ](https://img.shields.io/coveralls/tomchentw/tc-spa-boilerplate.svg)                 ](https://coveralls.io/r/tomchentw/tc-spa-boilerplate)
-[![Dependencies](https://gemnasium.com/tomchentw/tc-spa-boilerplate.svg)                            ](https://gemnasium.com/tomchentw/tc-spa-boilerplate)
 
 
 ## Project philosophy
@@ -16,10 +11,22 @@ It also has great readibility and lots of syntax sugar just like you're writting
 
 ## Contributing
 
-[![devDependency Status](https://david-dm.org/tomchentw/tc-spa-boilerplate/dev-status.svg?theme=shields.io)](https://david-dm.org/tomchentw/tc-spa-boilerplate#info=devDependencies)
+[![devDependency Status][david-dm-image]][david-dm-url]
 
 1. Fork it ( https://github.com/tomchentw/tc-spa-boilerplate/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+
+[travis-image]: https://travis-ci.org/tomchentw/tc-spa-boilerplate.svg?branch=master
+[travis-url]: https://travis-ci.org/tomchentw/tc-spa-boilerplate
+[codeclimate-image]: https://img.shields.io/codeclimate/github/tomchentw/tc-spa-boilerplate.svg
+[codeclimate-url]: https://codeclimate.com/github/tomchentw/tc-spa-boilerplate
+[coveralls-image]: https://img.shields.io/coveralls/tomchentw/tc-spa-boilerplate.svg
+[coveralls-url]: https://coveralls.io/r/tomchentw/tc-spa-boilerplate
+[gemnasium-image]: https://gemnasium.com/tomchentw/tc-spa-boilerplate.svg
+[gemnasium-url]: https://gemnasium.com/tomchentw/tc-spa-boilerplate
+[david-dm-image]: https://david-dm.org/tomchentw/tc-spa-boilerplate/dev-status.svg?theme=shields.io
+[david-dm-url]: https://david-dm.org/tomchentw/tc-spa-boilerplate#info=devDependencies
